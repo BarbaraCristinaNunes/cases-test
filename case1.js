@@ -5,16 +5,16 @@
     key equal to the value of the string
 */
 
-function checkKeyContent(obj, key){
+function getKeyContent(obj, key){
 
-    if(obj[key]){
+    if(key in obj){
         return obj[key];
     }
 
     return false
 }
 
-console.log(checkKeyContent({  continent: 'Asia',  country: 'Japan'}, 'continent'));
+console.log(getKeyContent({  continent: 'Asia',  country: 'Japan'}, 'continent'));
 
 /*
     The first step in function checkKeyContent is check if there is the key in obj;

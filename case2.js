@@ -9,8 +9,8 @@ function
 */
 
 function concatObjects(obj1, obj2){
-    
-    if(obj2.b){
+
+    if("b" in obj2){
         obj2.d = obj2.b;
         delete obj2.b;
     }

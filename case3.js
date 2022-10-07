@@ -8,12 +8,18 @@
 const button = document.getElementById('button');
 const input = document.getElementById('input');
 const list = document.getElementById('list');
+
 button.addEventListener('click' , () => {
 
-    if(input){
-    const newTask = document.createElement("li");
-    newTask.innerHTML = input.value;
-    list.appendChild(newTask);
-  }
+    if(input.value.trim()){
+        const newTask = document.createElement("li");
+        newTask.innerHTML = input.value;
+        list.appendChild(newTask);
+    }
 
 });
+
+/* 
+    .trim() was used to remove whitespace from the begin and end of input value. In this case when user try to save a taks
+    which has only whitespaces .trim() remove them. So input.value becomes empty and the function does not create this task.
+*/

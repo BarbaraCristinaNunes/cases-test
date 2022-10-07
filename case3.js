@@ -10,10 +10,10 @@ const input = document.getElementById('input');
 const list = document.getElementById('list');
 
 button.addEventListener('click' , () => {
-
+    
     if(input.value.trim()){
         const newTask = document.createElement("li");
-        newTask.innerHTML = input.value;
+        newTask.appendChild(document.createTextNode(input.value));
         list.appendChild(newTask);
     }
 

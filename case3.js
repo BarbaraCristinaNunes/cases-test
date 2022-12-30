@@ -10,11 +10,23 @@ const input = document.getElementById('input');
 const list = document.getElementById('list');
 
 button.addEventListener('click' , () => {
-    
     if(input.value.trim()){
-        const newTask = document.createElement("li");
-        newTask.appendChild(document.createTextNode(input.value));
-        list.appendChild(newTask);
+
+        const tasks = document.getElementsByTagName('li');
+        console.log(tasks)
+        console.log("tasks ", tasks.length);
+        let tasksArr = []
+        for(let i = 0; i < tasks.length; i++){
+            tasksArr.push(tasks[i].innerHTML.toLowerCase());
+            
+        }
+        
+        if(!tasksArr.includes(input.value.trim().toLowerCase())){
+            const newTask = document.createElement("li");
+            newTask.appendChild(document.createTextNode(input.value));
+            // newTask.innerHTML = input.value;
+            list.appendChild(newTask);
+        }
     }
 
 });
